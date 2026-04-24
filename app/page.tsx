@@ -5,7 +5,6 @@ import {
   FooterExtras,
   Hero,
   HowItWorks,
-  PricingStrip,
   ServicesGrid,
   TrustStrip,
 } from "@/components/sections";
@@ -19,7 +18,6 @@ export default function HomePage() {
       <FeatureGrid />
       <ServicesGrid />
       <HowItWorks />
-      <PricingStrip />
       <ConsultationStrip />
       <FooterExtras />
     </>

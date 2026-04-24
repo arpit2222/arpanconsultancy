@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
+  contactInfo,
   contactChannels,
   expertiseBars,
   featureCards,
@@ -285,10 +286,11 @@ export function FooterExtras() {
           <div className="card">
             <h3>Contact Info</h3>
             <div className="contact-list">
-              <Link href="tel:+16475287458">(647) 528-7458</Link>
-              <Link href="tel:+14273727296">(427) 372-7296</Link>
-              <Link href="mailto:consulting@mail.com">consulting@mail.com</Link>
-              <div className="muted">9514 Smoky Hollow St. Sulphur</div>
+              <Link href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</Link>
+              <Link href={`mailto:${contactInfo.email}`}>{contactInfo.email}</Link>
+              <Link href={contactInfo.mapHref} target="_blank" rel="noreferrer">
+                Google Maps Location
+              </Link>
             </div>
           </div>
         </div>

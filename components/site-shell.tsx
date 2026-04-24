@@ -4,7 +4,24 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { useState } from "react";
-import { navItems } from "@/lib/site-content";
+import { contactInfo, navItems, socialLinks } from "@/lib/site-content";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  WhatsAppIcon,
+  XIcon,
+  YouTubeIcon,
+} from "@/components/social-icons";
+
+const socialIconMap = {
+  WhatsApp: WhatsAppIcon,
+  Facebook: FacebookIcon,
+  X: XIcon,
+  Instagram: InstagramIcon,
+  LinkedIn: LinkedInIcon,
+  YouTube: YouTubeIcon,
+} as const;
 
 export function SiteShell({
   children,
@@ -23,8 +40,8 @@ export function SiteShell({
                 <Image
                   src="/logo.jpg"
                   alt="Arpan Consultancy logo"
-                  width={156}
-                  height={96}
+                  width={84}
+                  height={56}
                   priority
                 />
               </span>
@@ -36,17 +53,6 @@ export function SiteShell({
                   {item.label}
                 </Link>
               ))}
-              <div className="social-group" aria-label="Social links">
-                <Link href="#" aria-label="Facebook">
-                  f
-                </Link>
-                <Link href="#" aria-label="X">
-                  x
-                </Link>
-                <Link href="#" aria-label="Instagram">
-                  o
-                </Link>
-              </div>
             </nav>
 
             <button
@@ -67,17 +73,6 @@ export function SiteShell({
                   {item.label}
                 </Link>
               ))}
-              <div className="mobile-socials">
-                <Link href="#" onClick={() => setOpen(false)}>
-                  Facebook
-                </Link>
-                <Link href="#" onClick={() => setOpen(false)}>
-                  X
-                </Link>
-                <Link href="#" onClick={() => setOpen(false)}>
-                  Instagram
-                </Link>
-              </div>
             </div>
           ) : null}
         </div>
@@ -96,6 +91,29 @@ export function SiteShell({
               Gaur City, Greater Noida West
               <br />
               Tax | Legal | Business | Finance
+            </div>
+            <div className="contact-list">
+              <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
+              <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+              <a href={contactInfo.mapHref} target="_blank" rel="noreferrer">
+                Google Maps
+              </a>
+            </div>
+            <div className="social-footer" aria-label="Social links">
+              {socialLinks.map((item) => {
+                const Icon = socialIconMap[item.name as keyof typeof socialIconMap];
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={item.name}
+                  >
+                    <Icon className="social-icon" />
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

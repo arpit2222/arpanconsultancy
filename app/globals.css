@@ -81,7 +81,7 @@ img {
 }
 
 .brand-mark {
-  width: 165px;
+  width: 110px;
   height: auto;
   display: block;
   flex: 0 0 auto;
@@ -118,22 +118,30 @@ img {
 .social-group {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   margin-left: 8px;
+  align-self: center;
 }
 
 .social-group a,
 .mobile-socials a {
-  display: inline-grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
   border-radius: 999px;
   background: #f1f6f4;
   border: 1px solid rgba(19, 109, 88, 0.08);
   color: var(--text);
   font-weight: 700;
   transition: 180ms ease;
+}
+
+.social-icon {
+  width: 15px;
+  height: 15px;
+  display: block;
 }
 
 .social-group a:hover,
@@ -552,6 +560,7 @@ img {
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .stack {
@@ -577,6 +586,24 @@ img {
 .contact-list a {
   color: var(--brand);
   font-weight: 700;
+}
+
+.social-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #f1f6f4;
+  border: 1px solid rgba(19, 109, 88, 0.08);
+  color: var(--brand);
 }
 
 .google-form-wrap {
@@ -615,8 +642,7 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .section-head,
-  .header-inner {
+  .section-head {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -651,9 +677,24 @@ img {
   .hero h1 {
     max-width: 12ch;
   }
+
+  .brand-mark {
+    width: 92px;
+  }
 }
 
 @media (max-width: 640px) {
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .brand-mark {
+    width: 78px;
+  }
+
   .container {
     width: min(var(--max), calc(100% - 24px));
   }
@@ -680,5 +721,11 @@ img {
 
   .trust-strip {
     gap: 10px;
+  }
+
+  .mobile-toggle {
+    margin-left: auto;
+    min-height: 40px;
+    padding: 0 12px;
   }
 }

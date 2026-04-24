@@ -6,6 +6,39 @@ export const navItems = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+export const socialLinks = [
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/message/MHPU57VMWMM7C1",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/people/Arpan-Consultancy/61577507254310/?rdid=RKVrlQPep2bmZuBu&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1bSUddD8Qu%2F%3Fref%3D1",
+  },
+  {
+    name: "X",
+    href: "https://x.com/arpan_legal_fin",
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/arpan.consultancy?utm_source=qr&igsh=MWJlbGFzcGh0YTc5YQ==",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/arpan-consultancy/",
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@arpanconsultancy-u4x?si=TMCdpCPp_y8kceDa",
+  },
+] as const;
+
+export const contactInfo = {
+  phone: "8178845901",
+  email: "chauhanarpan88@gmail.com",
+  mapHref: "https://maps.app.goo.gl/RF9xXUZN8yu34FFG9?g_st=ac",
+} as const;
+
 export const heroHighlights = [
   {
     label: "Trusted by Businesses Across India",

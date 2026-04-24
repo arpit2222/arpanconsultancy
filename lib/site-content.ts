@@ -1,156 +1,192 @@
 export const navItems = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/startup-hub", label: "Startup Hub" },
-  { href: "/tax-audit", label: "Tax & Audit" },
-  { href: "/exporters-corner", label: "Exporters Corner" },
-  { href: "/licenses-nocs", label: "Licenses & NOCs" },
-  { href: "/blog", label: "Insights" },
+  { href: "/about", label: "About" },
+  { href: "/news", label: "News" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export const coreServices = [
+export const heroHighlights = [
   {
-    title: "Tax & Statutory Compliance",
-    description:
-      "GST registration, GST returns, Income Tax filing, TDS compliance, notices, and appeals.",
+    label: "Trusted by Businesses Across India",
   },
   {
-    title: "Business Setup & Corporate Secretarial",
-    description:
-      "Private Limited Company, LLP, Partnership, HUF, PAN/TAN, MCA/ROC filings, and documentation.",
+    label: "Expert CA & Legal Team",
   },
   {
-    title: "Export-Import & Global Trade",
-    description:
-      "IEC, LUT, RCMC, APEDA, EPCH, FIEO, EEPC, AEPC, PHARMEXCIL, and allied trade support.",
+    label: "Fast & Reliable Service",
   },
   {
-    title: "Industrial Licenses & Regulatory NOCs",
-    description:
-      "Pollution NOC, Fire NOC, Factory License, Trade Mark registration, FSSAI, and more.",
-  },
-  {
-    title: "Financial Advisory & Virtual CFO",
-    description:
-      "Statutory audits, tax audits, SMETA audits, projected financials, and CMA data.",
-  },
-  {
-    title: "Strategic Local Advisory",
-    description:
-      "A Gaur City, Greater Noida West base with Delhi-NCR reach for on-ground coordination.",
+    label: "Compliance with care",
   },
 ] as const;
 
-export const industryPillars = [
-  "Manufacturing & Factories",
-  "Handicraft Exporters",
-  "Tech Startups",
-  "Pharmaceuticals & Food",
+export const expertiseBars = [
+  { label: "Tax Consulting", value: 65 },
+  { label: "Finance Consulting", value: 95 },
+  { label: "Business Consulting", value: 80 },
 ] as const;
 
-export const siteStats = [
+export const servicesPreview = [
   {
-    value: "40+",
-    label: "Years of accounting and compliance heritage",
+    title: "Tax Consulting",
+    description:
+      "GST, Income Tax, TDS, return filing, notices, and day-to-day compliance support.",
   },
   {
-    value: "6",
-    label: "Core service verticals across the firm",
+    title: "Finance Consulting",
+    description:
+      "Financial planning, audit support, business reporting, and advisory assistance.",
   },
   {
-    value: "Delhi-NCR",
-    label: "Local execution and liaison coverage",
+    title: "Business Consulting",
+    description:
+      "Company setup, licenses, RCMC registrations, and practical business guidance.",
   },
   {
-    value: "100%",
-    label: "Multi-layer review mindset for filings",
+    title: "Tax Legislation",
+    description:
+      "Structured interpretation of laws, filing calendars, and regulatory updates.",
+  },
+  {
+    title: "Strategy & Analytics",
+    description:
+      "Clarity for founders and growing firms using organized compliance and planning.",
+  },
+  {
+    title: "Audit & Assurance",
+    description:
+      "Audit preparation, documentation review, and assurance-oriented workflows.",
   },
 ] as const;
 
-export const serviceClusters = [
+export const featureCards = [
   {
-    title: "Tax & Statutory Compliance",
-    items: [
-      "ITR 1-4 filing",
-      "GST registration and returns",
-      "TDS compliance",
-      "Tax notices and appeals",
-    ],
+    title: "Expert Advisory",
+    description:
+      "Get professional guidance from experienced tax and legal consultants.",
   },
   {
-    title: "Business Setup & Corporate Secretarial",
-    items: [
-      "Private Limited Company",
-      "LLP / Partnership / HUF",
-      "MCA / ROC filings",
-      "Partnership deeds and agreements",
-    ],
+    title: "End-to-End Compliance",
+    description:
+      "From registration to filings, everything is handled under one roof.",
   },
   {
-    title: "Export-Import & Global Trade",
-    items: [
-      "IEC and LUT",
-      "RCMC registration",
-      "APEDA / EPCH / FIEO / EEPC / AEPC",
-      "Icegate and customs support",
-    ],
+    title: "Pan India Services",
+    description:
+      "Serving clients across India with reliable digital support.",
   },
   {
-    title: "Industrial Licenses & Regulatory NOCs",
-    items: [
-      "Pollution NOC",
-      "Fire NOC",
-      "Factory license",
-      "FSSAI / ISO / Trade Mark",
-    ],
-  },
-  {
-    title: "Financial Advisory & Audit",
-    items: [
-      "Statutory audit",
-      "Tax audit",
-      "SMETA audit",
-      "Project financials and CMA data",
-    ],
+    title: "Fast Execution",
+    description:
+      "Quick turnaround with accurate documentation and careful review.",
   },
 ] as const;
 
 export const processSteps = [
   {
-    title: "Discover",
-    body: "We review your business model, compliance exposure, and target licenses or filings.",
+    number: "1",
+    title: "Understand the Business",
+    body:
+      "We study your current business position, compliance needs, and service requirements.",
   },
   {
-    title: "Plan",
-    body: "We map the exact route, documents, and statutory requirements for the mandate.",
+    number: "2",
+    title: "Create a Business Plan",
+    body:
+      "We map the route for filings, registrations, licensing, and follow-up actions.",
   },
   {
-    title: "Execute",
-    body: "Our team prepares, reviews, and submits the work with structured follow-up.",
+    number: "3",
+    title: "Implementation",
+    body:
+      "We execute the plan with documentation support, submission, and coordination.",
+  },
+] as const;
+
+export const pricingCards = [
+  {
+    title: "Individual",
+    price: "$49/Mo",
+    items: [
+      "Auctor elit sed vulputate",
+      "Nunc aliquet bibendum",
+      "Vitae nunc sed velit aliquam",
+      "Dignissim tincidunt lobortis",
+    ],
   },
   {
-    title: "Track",
-    body: "We keep clients updated until completion and carry forward the next obligations.",
+    title: "Business",
+    price: "$199/Mo",
+    items: [
+      "Auctor elit sed vulputate",
+      "Nunc aliquet bibendum",
+      "Vitae nunc sed velit aliquam",
+      "Dignissim tincidunt lobortis",
+    ],
   },
 ] as const;
 
 export const contactChannels = [
   {
-    title: "General Inquiries",
-    value: "+91-XXXXXXXXXX",
-    note: "Use this for consultations, pricing, and service guidance.",
+    title: "Contact Info",
+    items: [
+      {
+        label: "(647) 528-7458",
+        href: "tel:+16475287458",
+      },
+      {
+        label: "(427) 372-7296",
+        href: "tel:+14273727296",
+      },
+      {
+        label: "consulting@mail.com",
+        href: "mailto:consulting@mail.com",
+      },
+    ],
   },
   {
-    title: "Email",
-    value: "hello@arpanconsultancy.in",
-    note: "Replace with the official business email before publishing.",
+    title: "Opening Hours",
+    items: [
+      { label: "Mon - Fri 9AM - 8PM" },
+      { label: "Sat - Sun 10AM - 5PM" },
+    ],
   },
   {
-    title: "Office",
-    value: "Gaur City, Greater Noida West, Uttar Pradesh",
-    note: "Add the exact building and suite number when finalizing.",
+    title: "Social Media",
+    items: [
+      { label: "Facebook", href: "#" },
+      { label: "X (Twitter)", href: "#" },
+      { label: "Instagram", href: "#" },
+      { label: "LinkedIn", href: "#" },
+    ],
   },
 ] as const;
 
+export const footerQuote = {
+  title: "Beware of little expenses, a small leak will sink a great ship",
+  author: "Benjamin Franklin",
+} as const;
+
+export const newsletterText = {
+  title: "Subscribe to Latest News",
+  description: "Get compliance updates, service news, and business insights.",
+} as const;
+
+export const serviceDetails = [
+  {
+    title: "Tax Consultantion",
+    description:
+      "Income tax, GST, TDS, filing support, and routine compliance management.",
+  },
+  {
+    title: "Finance Consultantion",
+    description:
+      "Finance planning, bookkeeping support, and audit-ready reporting assistance.",
+  },
+  {
+    title: "Business Consultantion",
+    description:
+      "Entity setup, registrations, licensing, and consulting for growing firms.",
+  },
+] as const;

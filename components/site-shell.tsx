@@ -23,16 +23,10 @@ export function SiteShell({
                 <Image
                   src="/logo.jpg"
                   alt="Arpan Consultancy logo"
-                  width={56}
-                  height={47}
+                  width={156}
+                  height={96}
                   priority
                 />
-              </span>
-              <span className="brand-copy">
-                <span className="brand-name">Arpan Consultancy</span>
-                <span className="brand-tag">
-                  Tax, GST, EXIM, licensing, and business setup
-                </span>
               </span>
             </Link>
 
@@ -42,9 +36,17 @@ export function SiteShell({
                   {item.label}
                 </Link>
               ))}
-              <Link className="cta" href="/contact">
-                Book Consultation
-              </Link>
+              <div className="social-group" aria-label="Social links">
+                <Link href="#" aria-label="Facebook">
+                  f
+                </Link>
+                <Link href="#" aria-label="X">
+                  x
+                </Link>
+                <Link href="#" aria-label="Instagram">
+                  o
+                </Link>
+              </div>
             </nav>
 
             <button
@@ -65,9 +67,17 @@ export function SiteShell({
                   {item.label}
                 </Link>
               ))}
-              <Link className="cta" href="/contact" onClick={() => setOpen(false)}>
-                Book Consultation
-              </Link>
+              <div className="mobile-socials">
+                <Link href="#" onClick={() => setOpen(false)}>
+                  Facebook
+                </Link>
+                <Link href="#" onClick={() => setOpen(false)}>
+                  X
+                </Link>
+                <Link href="#" onClick={() => setOpen(false)}>
+                  Instagram
+                </Link>
+              </div>
             </div>
           ) : null}
         </div>
@@ -80,14 +90,12 @@ export function SiteShell({
           <div className="footer-inner">
             <div>
               <strong>Arpan Consultancy</strong>
-              <div className="muted">
-                Institutional business consulting for Delhi-NCR and export-led firms.
-              </div>
+              <div className="muted">Compliance simplified. Business amplified.</div>
             </div>
             <div className="muted">
               Gaur City, Greater Noida West
               <br />
-              GST | Income Tax | RCMC | Licenses | Audits
+              Tax | Legal | Business | Finance
             </div>
           </div>
         </div>

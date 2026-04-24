@@ -1,72 +1,145 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   contactChannels,
-  coreServices,
-  industryPillars,
+  expertiseBars,
+  featureCards,
+  footerQuote,
+  heroHighlights,
+  newsletterText,
+  pricingCards,
   processSteps,
-  serviceClusters,
-  siteStats,
+  serviceDetails,
+  servicesPreview,
 } from "@/lib/site-content";
+import { GoogleFormEmbed } from "@/components/google-form";
 
 export function Hero() {
   return (
     <section className="hero">
       <div className="container hero-grid">
         <div>
-          <div className="eyebrow">Gaur City, Greater Noida West</div>
-          <h1>Business compliance, built with precision and speed.</h1>
+          <div className="eyebrow">Welcome</div>
+          <h1>Simplifying Tax, Legal &amp; Business Compliance Across India</h1>
           <p>
-            Arpan Consultancy is a multi-disciplinary firm for GST, Income Tax,
-            company formation, export registrations, industrial NOCs, and audit
-            support. The site structure below mirrors the current consultancy
-            offering and expands it into a clean Next.js experience.
+            End-to-end consultancy services for startups, SMEs, and enterprises
+            from registration to compliance, all under one roof.
           </p>
           <div className="hero-actions">
             <Link className="button primary" href="/contact">
-              Book a Professional Consultation
+              Get Started Now
             </Link>
-            <Link className="button" href="/services">
-              Explore Services
+            <Link className="button" href="/news">
+              Watch Video
             </Link>
+          </div>
+          <div className="hero-badge-row">
+            {heroHighlights.map((item) => (
+              <span key={item.label}>{item.label}</span>
+            ))}
           </div>
         </div>
 
-        <aside className="hero-card">
-          <div className="eyebrow">What the site covers</div>
-          <div className="stat-grid">
-            {siteStats.map((stat) => (
-              <div className="stat" key={stat.label}>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
+        <div className="hero-panel">
+          <div className="hero-art">
+            <div className="hero-card">
+              <div className="logo-badge">
+                <Image
+                  src="/logo.jpg"
+                  alt="Arpan Consultancy"
+                  width={640}
+                  height={532}
+                  priority
+                />
               </div>
-            ))}
+            </div>
           </div>
-          <div style={{ marginTop: 20 }} className="muted">
-            Core pages included: Home, About, Services, Startup Hub, Tax & Audit,
-            Exporters Corner, Licenses & NOCs, Insights, and Contact.
-          </div>
-        </aside>
+        </div>
       </div>
     </section>
   );
 }
 
-export function ServicesSurface() {
+export function TrustStrip() {
+  return (
+    <section className="hero-trust">
+      <div className="container">
+        <div className="trust-strip">
+          {heroHighlights.map((item) => (
+            <span key={item.label}>✔ {item.label}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ExpertisePanel() {
   return (
     <section className="section">
-      <div className="container surface">
-        <div className="section-head">
+      <div className="container expertise-panel">
+        <div className="grid-2">
           <div>
-            <h2 className="section-title">Service pillars</h2>
-            <p className="section-lead">
-              Built from the provided SEO docs and expanded into a clean page
-              structure for the Next.js build.
-            </p>
+            <div className="eyebrow">Our Expertise</div>
+            <h2 className="section-title">
+              When you change the way you look at things, the things you look at
+              change
+            </h2>
+          </div>
+          <div className="progress-list">
+            {expertiseBars.map((item) => (
+              <div className="progress-row" key={item.label}>
+                <div className="progress-head">
+                  <span>{item.label}</span>
+                  <span>{item.value}/100</span>
+                </div>
+                <div className="progress-track" aria-hidden="true">
+                  <div className="progress-fill" style={{ width: `${item.value}%` }} />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function FeatureGrid() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="grid-2">
+          {featureCards.map((item) => (
+            <article className="card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ServicesGrid() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow">What We Do</div>
+            <h2 className="section-title">Business Consulting Services</h2>
+          </div>
+          <Link className="button" href="/services">
+            All Services
+          </Link>
+        </div>
+
         <div className="grid-3">
-          {coreServices.map((service) => (
+          {servicesPreview.map((service, index) => (
             <article className="card" key={service.title}>
+              <div className="eyebrow">0{index + 1}.</div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
             </article>
@@ -77,88 +150,21 @@ export function ServicesSurface() {
   );
 }
 
-export function WhyUs() {
-  return (
-    <section className="section">
-      <div className="container">
-        <div className="grid-2">
-          <article className="card">
-            <h2 className="section-title">Why Arpan Consultancy</h2>
-            <p>
-              The copy supplied in your docs points to a firm that combines
-              multi-generation accounting knowledge, subject-matter specialists,
-              and local liaison capability in the Delhi-NCR industrial belt.
-            </p>
-            <ul className="pill-list">
-              <li>Multi-tier review</li>
-              <li>Digital-first workflow</li>
-              <li>Local coordination</li>
-              <li>Institutional accuracy</li>
-            </ul>
-          </article>
-
-          <article className="card">
-            <h3>Industries served</h3>
-            <p>These are the industry clusters explicitly mentioned in the brief.</p>
-            <ul className="pill-list">
-              {industryPillars.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function ServiceClusters() {
+export function HowItWorks() {
   return (
     <section className="section">
       <div className="container">
         <div className="section-head">
           <div>
-            <h2 className="section-title">Full service architecture</h2>
-            <p className="section-lead">
-              This is the page-level grouping I derived from the documents.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid-2">
-          {serviceClusters.map((cluster) => (
-            <article className="card" key={cluster.title}>
-              <h3>{cluster.title}</h3>
-              <ul>
-                {cluster.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function Process() {
-  return (
-    <section className="section">
-      <div className="container surface">
-        <div className="section-head">
-          <div>
-            <h2 className="section-title">How the firm works</h2>
-            <p className="section-lead">
-              A concise process that matches a professional consulting service.
-            </p>
+            <div className="eyebrow">How it Works</div>
+            <h2 className="section-title">Three Easy Steps</h2>
           </div>
         </div>
 
         <div className="timeline">
-          {processSteps.map((step, index) => (
+          {processSteps.map((step) => (
             <div className="timeline-item" key={step.title}>
-              <div className="timeline-index">{index + 1}</div>
+              <div className="timeline-index">{step.number}</div>
               <div>
                 <h3>{step.title}</h3>
                 <p>{step.body}</p>
@@ -171,57 +177,54 @@ export function Process() {
   );
 }
 
-export function ContactSurface() {
+export function PricingStrip() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="grid-2">
+          {pricingCards.map((card) => (
+            <article className="pricing-card" key={card.title}>
+              <h3>{card.title}</h3>
+              <div className="price">{card.price}</div>
+              <ul>
+                {card.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <div style={{ marginTop: 18 }}>
+                <Link className="button primary" href="/contact">
+                  Get Started
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ConsultationStrip() {
   return (
     <section className="section">
       <div className="container">
         <div className="grid-2">
           <article className="card">
-            <h2 className="section-title">Contact channels</h2>
-            <div className="stack">
-              {contactChannels.map((channel) => (
-                <div key={channel.title}>
-                  <h3>{channel.title}</h3>
-                  <div className="accent">{channel.value}</div>
-                  <p>{channel.note}</p>
-                </div>
-              ))}
-            </div>
+            <div className="eyebrow">Need Help?</div>
+            <h2 className="section-title">Book a Consultation</h2>
+            <p>
+              Call us today for business setup, tax, licensing, or export support.
+            </p>
+            <Link className="button primary" href="/contact">
+              Find Out More
+            </Link>
           </article>
-
           <article className="card">
-            <h3>Inquiry form</h3>
-            <form className="form">
-              <div className="field">
-                <label htmlFor="name">Full name</label>
-                <input id="name" name="name" placeholder="Your name" />
-              </div>
-              <div className="field">
-                <label htmlFor="org">Organization</label>
-                <input id="org" name="org" placeholder="Business or company name" />
-              </div>
-              <div className="field">
-                <label htmlFor="service">Service category</label>
-                <select id="service" name="service" defaultValue="Taxation">
-                  <option>Taxation</option>
-                  <option>EXIM / Export</option>
-                  <option>Licensing</option>
-                  <option>Audit</option>
-                  <option>Incorporation</option>
-                </select>
-              </div>
-              <div className="field">
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Describe what you need help with"
-                />
-              </div>
-              <button className="button primary" type="submit">
-                Submit inquiry
-              </button>
-            </form>
+            <h3>Business Consultation</h3>
+            <p>60 Minutes · Online Meeting</p>
+            <div className="section-divider" />
+            <p>{newsletterText.description}</p>
+            <GoogleFormEmbed />
           </article>
         </div>
       </div>
@@ -229,3 +232,119 @@ export function ContactSurface() {
   );
 }
 
+export function NewsletterArea() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="grid-2">
+          <div className="card newsletter">
+            <div className="eyebrow">{newsletterText.title}</div>
+            <p>{newsletterText.description}</p>
+            <form>
+              <input type="email" placeholder="Your email *" aria-label="Email address" />
+              <button className="button primary" type="submit">
+                Subscribe Now
+              </button>
+            </form>
+          </div>
+          <div className="card contact-grid">
+            {contactChannels.map((section) => (
+              <div key={section.title} className="stack">
+                <h3>{section.title}</h3>
+                {"items" in section
+                  ? section.items.map((item) => {
+                      if ("href" in item && item.href) {
+                        return (
+                          <Link href={item.href} key={item.label}>
+                            {item.label}
+                          </Link>
+                        );
+                      }
+
+                      return <div key={item.label}>{item.label}</div>;
+                    })
+                  : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function FooterExtras() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="grid-2">
+          <div className="quote">
+            <h3>“{footerQuote.title}”</h3>
+            <p>— {footerQuote.author}</p>
+          </div>
+          <div className="card">
+            <h3>Contact Info</h3>
+            <div className="contact-list">
+              <Link href="tel:+16475287458">(647) 528-7458</Link>
+              <Link href="tel:+14273727296">(427) 372-7296</Link>
+              <Link href="mailto:consulting@mail.com">consulting@mail.com</Link>
+              <div className="muted">9514 Smoky Hollow St. Sulphur</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function PageHeader({
+  kicker,
+  title,
+  description,
+  ctaHref = "/contact",
+  ctaLabel = "Get Started Now",
+}: Readonly<{
+  kicker: string;
+  title: string;
+  description: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+}>) {
+  return (
+    <section className="hero">
+      <div className="container">
+        <div className="surface">
+          <div className="eyebrow">{kicker}</div>
+          <h1 className="section-title" style={{ marginTop: 10, maxWidth: "13ch" }}>
+            {title}
+          </h1>
+          <p className="section-lead" style={{ marginTop: 14 }}>
+            {description}
+          </p>
+          <div style={{ marginTop: 22 }}>
+            <Link className="button primary" href={ctaHref}>
+              {ctaLabel}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ServiceCards() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="grid-3">
+          {serviceDetails.map((item) => (
+            <article className="card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,4 +1,4 @@
-import { ServiceClusters } from "@/components/sections";
+import { PageHeader, ServiceCards, ServicesGrid } from "@/components/sections";
 
 export const metadata = {
   title: "Services",
@@ -6,6 +6,16 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
-  return <ServiceClusters />;
+  return (
+    <>
+      <PageHeader
+        kicker="Services"
+        title="The Best Services For Your Business"
+        description="A clean directory of the main service groups offered by Arpan Consultancy."
+      />
+      <ServicesGrid />
+      <ServiceCards />
+    </>
+  );
 }
 

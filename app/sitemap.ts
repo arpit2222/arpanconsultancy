@@ -5,11 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/services",
-    "/startup-hub",
-    "/tax-audit",
-    "/exporters-corner",
-    "/licenses-nocs",
-    "/blog",
+    "/news",
     "/contact",
   ];
 
@@ -18,4 +14,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 }
-

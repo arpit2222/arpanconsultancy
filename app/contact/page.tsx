@@ -21,7 +21,6 @@ export default function ContactPage() {
               <h3>General inquiries</h3>
               <div className="contact-list">
                 <a href="tel:+918178845901">+91 81788 45901</a>
-                <a href="tel:+918178845901">(427) 372-7296</a>
                 <a href="mailto:chauhanarpan88@gmail.com">chauhanarpan88@gmail.com</a>
               </div>
             </article>
